@@ -1,11 +1,15 @@
 package com.example.coronaapi;
+import com.example.coronaapi.MainActivity.*;
 
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface CoronaApi {
-    @GET("countries/GR")
-    Call<ApiData> getApiData();
+
+    @GET("countries/{country}")
+    Call<ApiData> getApiData(
+            @Path("country") String country
+    );
 }
